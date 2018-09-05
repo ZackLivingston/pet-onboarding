@@ -1,0 +1,234 @@
+/* ----- Fonts ----- */
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'open_sansbold';
+    src: url('fonts/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Bold-webfont.woff2') format('woff2'),
+         url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ------   Tag styles   ------ */
+
+html {
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: white;
+    background-image: linear-gradient(to right, white 50%, #56ABFF 75%, white 95%);
+    margin: 0 5% 0 5%;
+}
+
+strong {
+    font-family: open_sansbold, Arial, Helvetica, sans-serif;
+}
+
+h1::first-letter {
+    font-weight: bold;
+    font-family: open_sansbold, Arial, Helvetica, sans-serif;
+}
+
+a:link {
+    font-size: 0.9em;
+    font-size: 0.9rem;
+}
+
+a:visited {
+    color: red;
+}
+
+form label {
+    float: left;
+    margin-right: 10px;
+}
+
+form input[type='text'] {
+    color: blue;
+}
+
+form input:focus {
+    font-style: italic;
+    border: 2px solid #666666;
+    box-shadow: 0 0 15px #666666;
+}
+
+form input:focus:invalid {
+    box-shadow: inset 0 0 10px red;
+}
+
+fieldset {
+    float: left;
+}
+
+fieldset label {
+    float: none;
+    margin-right: 0px;
+}
+
+fieldset input {
+    float: none;
+    margin-right: 15px;
+}
+
+fieldset input:last-child {
+    margin-right: 0px;
+}
+
+button:hover {
+    box-shadow: 3px 3px 5px #666666;
+}
+
+img {
+    max-width: 100%;
+}
+
+video {
+    width: 100%;
+    float: left;
+}
+
+audio {
+    width: 100%;
+    float: right;
+}
+
+
+
+/* ----- Class Styles ------ */
+
+.clr {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.main-body {
+    font-family: open_sansregular, Arial, Helvetica, sans-serif;
+    background-color: white;
+    box-shadow: #56ABFF 0px 0px 100px;
+}
+
+.main-header {
+    text-shadow: #56ABFF 2px 2px 5px;
+}
+
+.main-header:hover {
+    color: orange;
+}
+
+.navbar {
+    background-color: gray;
+    padding: 5px;
+}
+
+.navbar .nav-link:link, .navbar .nav-link:visited {
+    text-decoration: none;
+}
+
+.nav-link {
+    display: inline;
+}
+
+.nav-link:link {
+    color: orange;
+}
+
+.nav-link:visited {
+    color: red;
+}
+
+.nav-link:active {
+    color: yellow;
+}
+
+.media-container {
+    width: 100%;
+}
+
+.responsive-boxes {
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
+.box-a, .box-b {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    background-color: orange;
+
+}
+
+
+/* ----- Responsive UI ----- */
+
+@media screen and (min-width: 720px) {
+    .box-a, .box-b {
+        display: inline-block;
+        width: 49%;
+        margin: 0;
+        background-color: blue;
+    }
+
+    .box-a {
+        float: left;
+    }
+
+    .box-b {
+        float: right;
+    }
+
+    video {
+        width: 49%;
+    }
+
+    audio {
+        width: 49%;
+    } 
+}
+
+@media screen and (min-width: 1080px) {
+    .box-a, .box-b {
+        display: inline-block;
+        width: 49%;
+        margin: 0;
+        background-color: blue;
+    }
+
+    .box-a {
+        float: left;
+    }
+
+    .box-b {
+        float: right;
+    }
+
+    video {
+        width: 24%;
+    }
+
+    audio {
+        width: 24%;
+    }
+}

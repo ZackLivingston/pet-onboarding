@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en'>
+    
+    <head>
+        <title>A simple HTML5 document</title>
+        <link rel='stylesheet' href='style.css'>
+        <meta charset='utf-8'>
+        <meta name='description' content='A description of the page.'>
+        <meta name='viewport' content="width=device-width, initial">
+    </head>
+
+    <body>
+        <header id='top'>
+            <nav class="navbar">
+                <a class='nav-link' href="https://google.ca" target="_blank">nav1</a>
+                <a class='nav-link' href="https://docs.google.com/document/d/1K3pU1NRQ8SYgu3tz6--IM3fmt7zSzSTWlUHDNOnRg2o/edit#heading=h.9611978w2baq" target="_blank">nav2</a>
+            </nav>
+        </header>
+
+        <div class='media-container clr'>
+            <video src='http://techslides.com/demos/sample-videos/small.mp4' controls preload="auto"></video>
+            <video controls preload='auto'>
+                <source src='http://techslides.com/demos/sample-videos/small.mp4' type='video/mp4'>
+                <source src='http://techslides.com/demos/sample-videos/small.webm ' type='video/webm'>
+                <p>Your browser does not support HTML5 video elements. Download <a href='http://techslides.com/demos/sample-videos/small.mp4'>here.</a></p>
+            </video>
+            <audio src='media/rain-02.mp3' controls preload="auto"></audio>
+            <audio controls>
+                <source src='media/rain-02.mp3' type='audio/mpeg'>
+                    <p>Your browser does not support HTML5 audio elements. Download <a href='media/rain-02.mp3'>here.</a></p>
+            </audio>
+        </div>
+
+        <div class='main-body'>
+            <h1 class='main-header'>Hello world</h1>
+            <p>This is a simple HTML5 document</p>
+            <ol>
+                <li>item one</li>
+                <li><strong>item two</strong></li>
+                <li>item three</li>
+            </ol>
+            <ul>
+                <li>item</li>
+                <li>another item</li>
+            </ul>
+
+        </div>
+
+        <blockquote>
+            <p>"Quote goes here"</p>
+            <cite><p>source goes here</p></cite>
+        </blockquote>
+
+        <form action='external-script', method='request-type' enctype="multipart/form-data" class='clr'>
+            <div>
+                <label for='input-field'>* Name: </label>
+                <input id='input-field' name='name' type='text' required='required' placeholder='placeholder'>
+            </div>
+            <div>
+                <label for='email-field'>* Email: </label>
+                <input id='email-field' name='email' type='email' required='required' placeholder='address@provider.com'>
+            </div>
+            <div>
+                <label for='file'>File upload: </label>
+                <input name='file' type='file' required='required' accept=".jpg,.png" class='file-input'>
+            </div>
+            <div>
+                <label for='mailing'>Add to mailing list? </label>
+                <input name='mailing' type='checkbox' id='mailing' value='true'>
+            </div>
+            <fieldset>
+                <legend for='size'>Size: </legend>
+                <label for='size-small'>Small</label> <input type='radio' name='size' id='size-small' value='small'> 
+                <label for='size-medium'>Medium</label> <input type='radio' name='size' id='size-medium' value='medium' checked='checked'> 
+                <label for='size-large'>Large</label> <input type='radio' name='size' id='size-large' value='large'> 
+            </fieldset>
+            <p class='clr'>Alternatively, </p>
+            <div>
+                <label for='select'>Size: </label>
+                <select name='select' id='select'>
+                    <option></option>
+                    <optgroup label='Common Choices'>
+                        <option value='small'>Small</option>
+                        <option value='medium'>Medium</option>
+                        <option value='large'>Large</option>
+                    </optgroup>
+                    <optgroup label='Uncommon Choices'>
+                        <option value='ex-small'>Extra Small</option>
+                        <option value='ex-largfe'>Extra Large</option>
+                        <option value='ex-ex-large'>Extra Extra Large</option>
+                    </optgroup>
+                </select>
+            </div>
+            <input type='hidden' name='form' value='test-form'>
+            <button type='submit'>submit</button>
+        </form>
+
+        <div class='responsive-boxes clr'>
+            <div class='box-a'>
+                <h2>Box A</h1>
+            </div>
+            <div class='box-b'>
+                <h2>Box B</h1>
+            </div>
+        </div>
+
+        <footer>
+            <p><a href='#top'>Back to top</a></p>
+        </footer>
+    </body>
+
+</html>

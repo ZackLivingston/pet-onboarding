@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+label {
+    display: block;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+
+#popups {
+    display: none;
+    width: 100%;
+    padding: 0.3rem;
+    color: white;
+}
+
+#popup-container {
+    height: 2rem;
+}
+
+#book-list-container {
+    width: 100%;
+}
+
+#book-list-header {
+    display: flex;
+    justify-content: center;
+}
+
+#book-list-header h5 {
+    width: 33%;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+#book-list {
+    border-top: solid 1px gray;
+}
+
+.book-row {
+    display: flex;
+    justify-content: center;
+}
+
+.book-title, .book-author {
+    width: 33%;
+}
+
+.book-isbn {
+    width: 25%;
+}
+
+.book-delete {
+    color: lightskyblue;
+}

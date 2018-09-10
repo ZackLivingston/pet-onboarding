@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id='main'>
+        <h1>Book List</h1>
+        <div id='popup-container'>
+            <div id='popups'></div>
+        </div>
+        <form id='input-form'>
+            <div>
+                <label for="title">Book Title</label>
+                <input id='title' type="text" required='required'>
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input id='author' type="text" required='required'>
+            </div>
+            <div>
+                <label for="isbn">ISBN</label>
+                <input id='isbn' type="number" required='required'>
+            </div>
+            <button id='submit'>Submit</button>
+        </form>
+
+        <div id = 'book-list-container'>
+            <div id='book-list-header'>
+                <h5>Title</h5>
+                <h5>Author</h5>
+                <h5>ISBN</h5>
+            </div>
+            <div id='book-list'></div>
+        </div>
+
+    </div>
+
+    <!--
+        <script src='app.js'></script>
+    -->
+        <script src='app6.js'></script>
+</body>
+</html>

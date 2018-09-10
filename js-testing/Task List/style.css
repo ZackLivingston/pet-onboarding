@@ -1,0 +1,49 @@
+html {
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.clr {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.card {
+    margin: 20px auto 20px auto;
+    box-shadow: 0.05rem 0.05rem 0.1rem #000000;
+    padding: 1%;
+    width: 80%;
+}
+
+.card-header {
+    margin-top: 0;
+}
+
+#task-list {
+    width: 100%;
+}
+
+.task {
+    margin: 0.3rem;
+    padding: 0.5rem;
+    width: 98%;
+    background-color: #DDD;
+}
+
+.task-title {
+    float: left;
+    margin: 0;
+}
+
+.delete-task {
+    float: right;
+    margin: 0;
+}

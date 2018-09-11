@@ -1,0 +1,59 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav {
+    background-color: #999;
+    text-align: center;
+}
+
+#navbar {
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+#nav-title {
+    display: inline;
+}
+
+#clear {
+    display: inline;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+#input-card {
+    padding: 0 1rem 1rem 1rem;
+    border: solid 1px #999;
+    box-shadow: 0 0 0.2rem #999;
+}
+
+.list-item {
+    display: flex;
+    justify-content: center;
+    border: solid 1px #999;
+    box-shadow: 0 0 0.2rem #999;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0 0.25rem 0 0.25rem;
+}
+
+.list-item-text {
+    width: 33%;
+}
+
+#update, #delete, #back {
+    display: none;
+}
+
+.picture {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 1rem 1rem 0;
+    float: left;
+}

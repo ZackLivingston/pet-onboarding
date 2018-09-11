@@ -1,0 +1,46 @@
+:root {
+    --orange: orange;
+}
+
+* {
+    transition: all 0.5s;
+}
+
+@media (min-resolution: 2ddpx) {
+    /* swap out styling for higher res screens */
+    /* should generally have media queries that are grouped alongside the things they are changing */
+}
+
+@supports (display: flex) {
+    /* alternative styling if flexbox is supported */
+}
+
+@supports not (display: flex) {
+    /* alternative styling for if you can't have flexbox */
+}
+
+input[required] {
+    color: var(--orange); /* terrible use of this, but mostly here for syntactical reference */
+}
+
+/* starts with */
+p[class^='testing'] {
+    color: orange
+}
+
+/* contains */
+p[class*='testing'] {
+    text-decoration: underline;
+}
+
+/* ends with */
+p[class$= 'testing'] {
+    background: grey;
+    width: calc(50% - 2em); /* spacing matters here */
+
+    transition: background-color 0.25s ease-out 0s;
+}
+
+p[class$= 'testing']:hover {
+   background: red;
+}

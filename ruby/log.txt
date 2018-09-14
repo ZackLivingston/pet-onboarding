@@ -1,0 +1,3 @@
+Error: undefined method `+' for nil:NilClass at 2018-09-12 09:58:15 -0400
+Error: undefined local variable or method `adfad' for main:Object at 2018-09-12 09:58:27 -0400
+Error: undefined method `+' for nil:NilClass at 2018-09-12 09:59:21 -0400

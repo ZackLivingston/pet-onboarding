@@ -4,6 +4,13 @@
 $light-gray: #777;
 $gray-medium-light: #eaeaea;
 
+@mixin box_sizing {
+    -moz-box-sizinng: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
 html {
     overflow-y: scroll;
 }
@@ -21,7 +28,22 @@ textarea {
     resize: vertical;
 }
 
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label, .form-control {
+        width: 60%;
+        margin: 0 auto 0 auto;
+    }
+    .form-control {
+        margin-bottom: 20px;
+    }
+}
+
 .btn {
+    display: block;
     color: white !important;
 }
 
@@ -62,4 +84,78 @@ textarea {
 #logo {
     font-size: 30px;
     color: white;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.gravatar {
+    margin-right: 10px;
+}
+
+.user-info {
+    h1 {
+        margin-top: 0;
+    }
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+        color: $state-danger-text;
+    }
+}
+
+.user-index {
+    margin-bottom: 5px;
+}
+
+.posts {
+    display: block;
+}
+
+.micropost {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.micropost-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user {
+    text-decoration: underline;
+    color: skyblue;
+    a:visited {
+        color: blue;
+    }
+}
+
+.delete-post {
+    text-decoration: underline;
+    margin-bottom: 0;
+    a {
+        color: skyblue;
+    }
+}
+
+// misc
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing()
 }

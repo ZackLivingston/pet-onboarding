@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, @user.name) %>
+<div class="profile-header">
+  <%= gravatar_for(@user) %>
+  <div class='user-info'>
+    <h1><%= @user.name %></h1>
+    <h4><%= @user.email %></h4>
+    <p>Admin: <%= @user.admin %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class='posts'>
+    <% if @user.microposts.any? %>
+      <h3></a>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>

@@ -1,6 +1,22 @@
-<h1>Editing User</h1>
+<% provide(:title, "Edit User") %>
 
-<%= render 'form', user: @user %>
+<h1 class='center'>Edit User</h1>
+<div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+        <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: 'form-control' %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+
+            <%= f.submit "Submit", class: 'btn btn-primary' %>
+        <% end %>
+        <%= gravatar_for(@user) %>
+    </div>
+</div>

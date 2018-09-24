@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @micropost.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
-<%= link_to 'Back', microposts_path %>
+<%= provide(:title, @micropost.name) %>
+<div class="profile-header">
+  <%= gravatar_for(@user) %>
+  <div class='user-info'>
+    <h1><%= @user.name %></h1>
+    <h4><%= @user.email %></h4>
+    <p>Admin: <%= @user.admin %></p>
+  </div>
+</div>

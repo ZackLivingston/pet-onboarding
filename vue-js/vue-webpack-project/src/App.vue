@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <server-statuses></server-statuses>
+    <server-statuses>
+      <h4 slot='header'>Inserting Slot from Parent</h4>
+      <!-- <h6 slot='sub-header'>SUB_HEADER</h6> -->
+      <p slot='paragraph'>SLOT</p>
+    </server-statuses>
     
   </div>
 </template>

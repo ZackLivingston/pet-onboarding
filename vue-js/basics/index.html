@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='style.css'>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-once>{{title}}</h1>
+        <p>{{ setTitle }}</p>
+        <a v-bind:href="link" target="_blank">Google</a>
+        <input type="text" v-on:input='changeTitle'>
+        <p v-html='anchor'>{{anchor}}</p>
+        <div>
+            <p>Count: {{count >= 5 ? count + ' >= 5' : count + ' < 5'}}</p>
+            <button v-on:click='increment(2, $event)'>+</button>
+            <button @click="count--">-</button>
+        </div>
+        <input type='text' v-on:keyup.enter='sendAlert'/>
+        <div>
+            <h5>{{input}}</h5>
+            <input type='text' v-model='input'/>
+        </div>
+        <div>
+            <div class='gray-box' @click='attachRed = ! attachRed' :class="{red: attachRed}"></div>
+            <div class='gray-box' @click='attachBlue = ! attachBlue' :class="{blue: attachBlue}"></div>
+        </div>
+        <input type="text" v-model='color'>
+        <div class="gray-box" :style='computedStyle'></div>
+        <button @click='show = !show'>Swap</button>
+        <p v-if='show'>Hidden</p>
+        <p v-else>Not Hidden</p>
+        <ul>
+            <template v-for='(val, index) in array'>
+                <li>{{ val }}, {{ index }}</li>
+            </template>
+            <li v-for='num in 5'>#{{ num }}</li>
+            
+        </ul>
+    </div>
+    <div id="app2">
+        <my-cmp>
+        </my-cmp>
+    </div>
+
+    <div id="app3">
+        <my-cmp></my-cmp>
+    </div>
+    
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+    <script src='app.js'></script>
+</body>
+</html>
+
+
+
+

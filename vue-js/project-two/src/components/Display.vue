@@ -25,4 +25,13 @@ export default {
 </script>
 
 <style>
+    slot, h4 {
+        margin-top: 15px;
+        margin-bottom: 2px;
+    }
+
+    slot, p {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
 </style>

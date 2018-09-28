@@ -52,6 +52,9 @@ export default {
     margin: 20px auto 0 auto;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
+    background-color: lightblue;
+    padding: 0 2% 0 2%;
   }
 
   .display-item {
@@ -60,6 +63,10 @@ export default {
 
   span {
     font-style: italic
+  }
+
+  #quote-header {
+    text-align: center;
   }
 
 </style>

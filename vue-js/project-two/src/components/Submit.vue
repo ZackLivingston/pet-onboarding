@@ -1,6 +1,6 @@
 <template>
     <div id='main'>
-        <h3>Submit New Quote</h3>
+        <h3 id='header'>Submit New Quote</h3>
         <div id="quote-submit">
             <label for="quote-input">Quote: </label>
             <input id='quote-input' type='text' v-model='quote' @keypress.enter='onSubmit'/>
@@ -50,6 +50,12 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border: 1px solid black;
+        padding: 2%;
+        background-color: lightblue;
+        #header {
+            margin-top: 0;
+        }
     }
 
     #quote-submit {
@@ -77,7 +83,9 @@ export default {
 
     button {
         text-align: center;
-        max-width: 400px;
+        padding: 1px;
+        width: 10%;
+        max-width: 100px;
     }
 
     label {

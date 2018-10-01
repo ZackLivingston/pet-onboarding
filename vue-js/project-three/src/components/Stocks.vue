@@ -10,13 +10,15 @@
                 </div>
                 <div>
                     <label for="buy"></label>
-                    <input :id='key' type="number">
+                    <input :id='key' type="number" @keyup.enter='buy(key)'>
                     <button @click="buy(key)">Buy</button>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+
 
 
 <script>
@@ -27,15 +29,20 @@ export default {
         buy(key) {
             const target = document.getElementById(key)
             const count = target.value
-            target.value = null
-
-            const cost = this.stocks[key] * count
-            if (cost <= this.$store.getters.getUser.funds) {
-                this.$store.commit('decreaseFunds', (cost))
-                this.$store.commit('increaseStock', {name: key, count: count})
+            if (count <= 0) {
+                this.$store.commit('setMsg', {text: "You cannot buy negative stocks.", colour: 'red'})
             } else {
-                this.$store.commit('setMsg', {text: "You don't have enough money.", colour: 'red'})
+                target.value = null
+                const cost = this.stocks[key] * count
+                if (cost <= this.$store.getters.getUser.funds) {
+                    this.$store.commit('decreaseFunds', (cost))
+                    this.$store.commit('increaseStock', {name: key, count: count})
+                } else {
+                    this.$store.commit('setMsg', {text: "You don't have enough money.", colour: 'red'})
+                }
             }
+            
+            
         }
     },
     computed: {
@@ -48,10 +55,10 @@ export default {
     },
     created() {
         const stocks = this.$store.getters.getStocks
+        this.stocks.KFC = stocks.KFC
         this.stocks.ford = stocks.ford
         this.stocks.apple = stocks.apple
         this.stocks.uber = stocks.uber
-        this.stocks.KFC = stocks.KFC
     }
 }
 </script>
@@ -70,10 +77,12 @@ export default {
     }
 
     .individual-container {
+        box-sizing: border-box;
         border: 1px solid gray;
         margin: 5px;
-        padding: 4px;
+        padding: 7px;
         flex-grow: 1;
+        max-width: 50%;
         display: flex;
         align-items: center;
         justify-content: space-around;

@@ -8,16 +8,16 @@ export const store = new Vuex.Store({
         user: {
             funds: 200,
             portfolio: { // number of each stock owned
+                KFC: 0,
                 apple: 0,
                 ford: 0,
-                KFC: 0,
                 uber: 0
             }
         },
         stocks: { // price per share
+            KFC: 20,
             apple: 100,
             ford: 40,
-            KFC: 20,
             uber: 400
         },
         msg: {
@@ -82,7 +82,7 @@ export const store = new Vuex.Store({
         saveGame: context => {
             const user = this.a.getters.getUser
             const stocksObj = this.a.getters.getStocks
-            const stocks = {apple: stocksObj.apple, ford: stocksObj.ford, KFC: stocksObj.KFC, uber: stocksObj.uber}
+            const stocks = {KFC: stocksObj.KFC, apple: stocksObj.apple, ford: stocksObj.ford, uber: stocksObj.uber}
             Vue.http.get('save.json')
             .then((res) => {
                 if (res) {
@@ -115,7 +115,6 @@ export const store = new Vuex.Store({
             .then(res => {
                 res.json()
                 .then(save => {
-                    console.log('loading')
                     context.state.user = save.user
                     context.state.stocks = save.stocks
                     context.commit('setMsg', {text: 'Save Loaded', colour: 'green'})

@@ -21,6 +21,9 @@
   </div>
 </template>
 
+
+
+
 <script>
 import {mapActions} from 'vuex'
 import {mapMutations} from 'vuex'
@@ -49,7 +52,7 @@ export default {
     worth() {
       const stocks = this.$store.getters.getStocks
       const portfolioObj = this.$store.getters.getPortfolio
-      const portfolio = {apple: portfolioObj['apple'], ford: portfolioObj['ford'], KFC: portfolioObj['KFC'], uber: portfolioObj['uber']}
+      const portfolio = {KFC: portfolioObj['KFC'], apple: portfolioObj['apple'], ford: portfolioObj['ford'], uber: portfolioObj['uber']}
       var stockWorth = 0
       Object.keys(portfolio).forEach((key) => {
         stockWorth += portfolio[key] * stocks[key]

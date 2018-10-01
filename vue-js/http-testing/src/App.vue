@@ -10,16 +10,18 @@
     <h3>HTTP Things</h3>
     <div>
       <label for="username">Username</label>
-      <input type="text" id='username' v-model='username' @keydown.enter='submit'>
+      <input type="text" id='username' v-model='username' @keydown.enter='submit("main")'>
     </div>
-    <button @click='submit'>Submit</button>
+    <button @click='submit("main")'>Submit</button>
     <button @click='submit("alt")'>Submit Alt</button>
     <button @click='getData'>Get</button>
-    <h4 v-for='user in users' v-bind:key='user.key'>{{ user.user }}</h4>
+    <h4 v-for='(user, index) in users' v-bind:key='index' @click="deleteUser(index)">{{ user.user }}</h4>
 
     <router-view></router-view>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -37,12 +39,15 @@ export default {
       // .then((response) => {
       //   console.log(response)
       // })
-      if (!options) {
+      console.log(options)
+      if (options === 'main') {
         this.resource.save({}, {user: this.username})
+        .then(() => {
+          this.getData()
+        })
       } else {
         this.resource.saveAlt({user: this.username})
       }
-      
       this.username = ''
     },
     getData() {
@@ -52,10 +57,14 @@ export default {
       .then((res) => {
         res.json()
         .then((users) => {
-          console.log(users)
+          console.log('users: ', users)
           this.users = users
         })
       })
+    },
+    deleteUser(index) {
+      console.log('delete: ', index)
+      this.resource.delete({user: this.users[index]})
     }
   },
   components: {
@@ -75,9 +84,12 @@ export default {
       saveAlt: {method: 'POST', url: 'alt.json'}
     }
     this.resource = this.$resource('data.json', {}, customActions)
+    this.getData()
   }
 }
 </script>
+
+
 
 <style lang="scss">
 #app {
@@ -108,8 +120,9 @@ a {
 }
 
 .active {
-  background-color: lightblue;
-  padding: 5px;
+  background-color: palegoldenrod;
+  padding: 8px;
+
 }
 
 </style>

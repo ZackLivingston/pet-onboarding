@@ -1,16 +1,56 @@
 <template>
   <div id="p-one">
-      Home
+    Home
+    <div>
+      <p>Count: {{counter}}</p>
+      <p>Double Count: {{doubleCounter}}</p>
+      <p>Square Count: {{squareCounter}}</p>
+      <button @click='incrementAction(2)'>Increment</button>
+      <button @click='decrementAction(2)'>Decrement</button>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
+
 export default {
   name: 'app',
   data () {
     return {
       username: '',
       users: []
+    }
+  },
+  methods: {
+    ...mapMutations([
+      'incrementCounter',
+      'decrementCounter'
+    ]),
+    ...mapActions([
+      'incrementAction',
+      'decrementAction'
+    ])
+    // other methods
+  },
+  // computed: {
+  //   count() {
+  //     return this.$store.state.counter
+  //   },
+  //   doubleCount() {
+  //     return this.$store.getters.doubleCounter
+  //   }
+  // },
+  // alternatively,
+  computed: {
+    ...mapGetters([
+      'doubleCounter',
+      'squareCounter',
+    ]),
+    counter(payload) {
+      return this.$store.state.counter
     }
   }
 }

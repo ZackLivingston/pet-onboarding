@@ -9,6 +9,7 @@ import VueRouter from 'vue-router';
 import User from './User.vue'
 import EditUser from './EditUser.vue'
 import UserBase from './UserBase.vue'
+import { store } from './store/store.js'
 
 Vue.use(VueResource)
 Vue.use(Router)
@@ -46,5 +47,6 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
